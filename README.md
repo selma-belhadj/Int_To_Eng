@@ -4,7 +4,7 @@
 - clone the repository
   `git clone https://github.com/selma-belhadj/Int_To_Eng.git`
 - navigate to the folder
-  `cd Int_To_Eng
+  `cd Int_To_Eng`
 - Install packages
   `bundle install`
 - Run the code

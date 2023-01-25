@@ -2,13 +2,15 @@
 > This exercise aims to write a program to transform Integers  written in numbers to letters in English, using the TDD appraoch.
 ## Getting Started
 - clone the repository
-  `git clone https://github.com/selma-belhadj/...git`
+  `git clone https://github.com/selma-belhadj/Int_To_Eng.git`
 - navigate to the folder
-  `cd ...`
-- checkout the feature
-  `git checkout developement`
+  `cd Int_To_Eng
 - Install packages
   `bundle install`
+- Run the code
+  `ruby bin/excutable.rb`
+- Run Tests
+  `rspec`
 
 ## Built With
 
@@ -27,7 +29,7 @@
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/selma-belhadj/../issues).
+Feel free to check the [issues page](https://github.com/selma-belhadj/Int_To_Eng/issues).
 
 ## Show your support
 

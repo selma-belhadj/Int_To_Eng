@@ -15,7 +15,7 @@ def int_to_eng(number)
     teens[number - 10]
   elsif number < 100 # 20-99y
     if (number % 10).zero?
-      (tens[number / 10]).to_s
+      (tens[number / 10])
     else
       "#{tens[number / 10]}-#{ones[number % 10]}".strip
     end
@@ -51,29 +51,29 @@ def int_to_eng(number)
     else
       "#{int_to_eng(number / 1_000_000)} million #{int_to_eng(number % 1_000_000)}".strip
     end
-  elsif number < 100_000_000
-    if (number % 10_000_000).zero?
-      "#{int_to_eng(number / 10_000_000)} million"
-    else
-      "#{int_to_eng(number / 10_000_000)} million #{int_to_eng(number % 10_000_000)}".strip
+  elsif number < 100_000_000 
+    if (number % 10_000_000).zero? # 10_000_000 20_000_000 90_000_000
+      "#{int_to_eng(number / 1_000_000)} million"
+    else 
+      "#{int_to_eng(number / 1_000_000)} million #{int_to_eng(number % 1_000_000)}".strip
     end
   elsif number < 1_000_000_000
-    if (number % 100_000_000).zero?
-      "#{int_to_eng(number / 100_000_000)} hundred million"
-    else
-      "#{int_to_eng(number / 100_000_000)} hundred million #{int_to_eng(number % 100_000_000)}".strip
+    if (number % 100_000_000).zero? # 100_000_000 200_000_000 900_000_000
+      "#{int_to_eng(number / 1_000_000)} million"
+    else # 100_000_001 200_000_001 906_030_501 234_567_890
+      "#{int_to_eng(number / 1_000_000)} million #{int_to_eng(number % 1_000_000)}".strip
     end
-  elsif number < 10_000_000_000
-    if (number % 1_000_000_000).zero?
+  elsif number < 10_000_000_000 # 1_234_567_890
+    if (number % 1_000_000_000).zero? # 1_000_000_000 2_000_000_000 9_000_000_000
       "#{int_to_eng(number / 1_000_000_000)} billion"
     else
       "#{int_to_eng(number / 1_000_000_000)} billion #{int_to_eng(number % 1_000_000_000)}".strip
     end
   elsif number < 100_000_000_000
-    if (number % 10_000_000_000).zero?
-      "#{int_to_eng(number / 10_000_000_000)} billion"
-    else
-      "#{int_to_eng(number / 10_000_000_000)} billion #{int_to_eng(number % 10_000_000_000)}".strip
+    if (number % 10_000_000_000).zero? # 10_000_000_000 20_000_000_000 90_000_000_000
+      "#{int_to_eng(number / 1_000_000_000)} billion"
+    else # 13_234_567_890
+      "#{int_to_eng(number / 1_000_000_000)} billion #{int_to_eng(number % 1_000_000_000)}".strip
     end
   end
 end

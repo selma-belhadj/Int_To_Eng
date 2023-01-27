@@ -3,6 +3,8 @@
 require 'rspec'
 require_relative 'spec_helper'
 require_relative '../lib/int_to_eng'
+#require_relative '../lib/optimised1'
+
 
 describe 'expect int_to_eng' do
   describe 'when given a string' do
@@ -125,6 +127,7 @@ describe 'expect int_to_eng' do
       expect(int_to_eng(10_000)).to eq  'ten thousand'
       expect(int_to_eng(10_001)).to eq  'ten thousand one'
       expect(int_to_eng(10_011)).to eq  'ten thousand eleven'
+      expect(int_to_eng(15_000)).to eq  'fifteen thousand'
       expect(int_to_eng(10_121)).to eq  'ten thousand one hundred twenty-one'
       expect(int_to_eng(12_031)).to eq  'twelve thousand thirty-one'
       expect(int_to_eng(16_741)).to eq  'sixteen thousand seven hundred forty-one'
@@ -134,6 +137,7 @@ describe 'expect int_to_eng' do
 
     it 'returns numbers in letters between 100_000 and 999_999' do
       expect(int_to_eng(100_000)).to eq  'one hundred thousand'
+      # expect(int_to_eng(150_000)).to eq  'one hundred fifty thousand'
       expect(int_to_eng(100_001)).to eq  'one hundred thousand one'
       expect(int_to_eng(100_011)).to eq  'one hundred thousand eleven'
       expect(int_to_eng(100_121)).to eq  'one hundred thousand one hundred twenty-one'
@@ -144,9 +148,13 @@ describe 'expect int_to_eng' do
     it 'handles large numbers correctly' do
       expect(int_to_eng(1_000_000)).to eq 'one million'
       expect(int_to_eng(1_234_567)).to eq 'one million two hundred thirty-four thousand five hundred sixty-seven'
-      # expect(int_to_eng(11_234_567)).to eq 'eleven million two hundred thirty-four thousand five hundred sixty-seven'
+      # expect(int_to_eng(14_000_000)).to eq 'fourteen million'
+      expect(int_to_eng(234_567_890)).to eq 'two hundred thirty-four million five hundred sixty-seven thousand eight hundred ninety'
+      expect(int_to_eng(11_234_567)).to eq 'eleven million two hundred thirty-four thousand five hundred sixty-seven'
       expect(int_to_eng(1_000_000_000)).to eq 'one billion'
-      #expect(int_to_eng(1_234_567_890)).to eq 'one billion two hundred thirty-four million five hundred sixty-seven thousand eight hundred ninety'
+      expect(int_to_eng(1_234_567_890)).to eq 'one billion two hundred thirty-four million five hundred sixty-seven thousand eight hundred ninety'
+      # expect(int_to_eng(18_000_000_000)).to eq 'eighteen billion'
+      expect(int_to_eng(13_234_567_890)).to eq 'thirteen billion two hundred thirty-four million five hundred sixty-seven thousand eight hundred ninety'
     end
 
   end
